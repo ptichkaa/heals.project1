@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="main_title">Здоровье с Samsung</string>
+    <string name="hint">Синхронизировано с Gear S3 в 01:53</string>
+    <string name="steps_title">Шаги</string>
+    <string name="steps_time_total">Все шаги, 02:14</string>
+    <string name="practice_title">Упражнение</string>
+    <string name="practice_hint">Просмотреть журнал</string>
+    <string name="sleep_title">Вы спали?</string>
+    <string name="sleep_time">8 ч. 30 мин. |  02:10 - 10:40</string>
+    <string name="sleep_ok_btn">ОК</string>
+</resources>

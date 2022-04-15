@@ -12,9 +12,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        findViewById(R.id.)
-        int t = 0;
-        t = 5;
     }
 
 }
