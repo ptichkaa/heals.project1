@@ -10,4 +10,6 @@
     <string name="sleep_title">Вы спали?</string>
     <string name="sleep_time">8 ч. 30 мин. |  02:10 - 10:40</string>
     <string name="sleep_ok_btn">ОК</string>
+    <string name="pulse">Пульс</string>
+
 </resources>
