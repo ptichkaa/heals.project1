@@ -9,6 +9,7 @@
     <string name="sleep_title">You slept?</string>
     <string name="sleep_time">8 hours 30 minutes | 02:10 - 10:40</string>
     <string name="pulse">Pulse</string>
+    <string name="OK">OK</string>
     <string name="number_of_steps">34</string>
     <string name="total_steps"> /9 000</string>
 </resources>

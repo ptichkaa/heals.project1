@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color"
-    android:paddingHorizontal="@dimen/padding_ALLconstraint_layout">
+    android:paddingHorizontal="@dimen/padding_all_constraint_layout">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/binding_for_first_container"
@@ -101,7 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/steps_time_total"
-            android:textColor="#9C9C9C"
+            android:textColor="@color/grey_text_color"
             android:textSize="@dimen/text_extra_small"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -301,6 +301,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sleep_container">
+
 
         <TextView
             android:id="@+id/pulse_title"
