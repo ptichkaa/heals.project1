@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_big">34sp</dimen>
+    <dimen name="text_medium">18sp</dimen>
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="text_extra_small">12sp</dimen>
+    <dimen name="padding_all_constraint_layout">10dp</dimen>
+    <dimen name="white_container_padding">20dp</dimen>
+    <dimen name="margin_bottom_white_container">10dp</dimen>
+    <dimen name="practice_button_size">45dp</dimen>
+    <dimen name="round_corner_background">16dp</dimen>
+    <dimen name="progress_bar_width">120dp</dimen>
+    <dimen name="progress_bar_height">10dp</dimen>
+    <dimen name="settings_btn_size">25dp</dimen>
+
+</resources>

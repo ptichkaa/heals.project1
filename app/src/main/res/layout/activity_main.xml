@@ -3,8 +3,318 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
-    android:paddingHorizontal="10dp">
+    android:background="@color/background_color"
+    android:paddingHorizontal="@dimen/padding_all_constraint_layout">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/binding_for_first_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_big"
+        app:layout_constraintBottom_toTopOf="@+id/steps_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hint"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_extra_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_title" />
+
+    <ImageView
+        android:id="@+id/settings_btn"
+        android:layout_width="@dimen/settings_btn_size"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/margin_bottom_white_container"
+        android:background="@drawable/buttons"
+        app:layout_constraintBottom_toTopOf="@id/steps_container"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@id/steps_container" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/steps_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_bottom_white_container"
+        android:background="@drawable/round_background"
+        android:padding="@dimen/white_container_padding"
+        app:layout_constraintBottom_toTopOf="@id/practice_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/binding_for_first_container">
+
+        <TextView
+            android:id="@+id/steps_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/steps_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/steps_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/number_of_steps"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_big"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/steps_time_total"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/steps_title" />
+
+        <TextView
+            android:id="@+id/steps_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_steps"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintBottom_toTopOf="@id/steps_time_total"
+            app:layout_constraintStart_toEndOf="@id/steps_amount"
+            app:layout_constraintTop_toBottomOf="@+id/steps_title"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <TextView
+            android:id="@+id/steps_time_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/steps_time_total"
+            android:textColor="@color/grey_text_color"
+            android:textSize="@dimen/text_extra_small"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/steps_amount"
+            app:layout_constraintTop_toBottomOf="@id/steps_amount" />
+
+        <TextView
+            android:id="@+id/steps_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            app:layout_constraintBottom_toTopOf="@id/steps_progress_bar"
+            app:layout_constraintStart_toStartOf="@id/steps_progress_bar" />
+
+        <ProgressBar
+            android:id="@+id/steps_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="@dimen/progress_bar_width"
+            android:layout_height="@dimen/progress_bar_height"
+            android:progress="10"
+            android:progressDrawable="@drawable/custome_progress_bar"
+            app:layout_constraintBottom_toBottomOf="@id/steps_total"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintTop_toTopOf="@+id/steps_total" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/practice_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_background"
+        android:padding="@dimen/white_container_padding"
+        app:layout_constraintBottom_toTopOf="@id/sleep_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/steps_container">
+
+        <TextView
+            android:id="@+id/practice_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/practice_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/practice_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/practice_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/practice_hint"
+            android:textColor="@color/grey_text_color"
+            android:textSize="@dimen/text_small"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/practice_binding_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/practice_binding_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageButton
+            android:id="@+id/practice_run_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/practice_button_size"
+            android:layout_marginVertical="@dimen/margin_bottom_white_container"
+            android:background="@drawable/run"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/practice_hiking_btn"
+            app:layout_constraintStart_toEndOf="@id/practice_binding_right"
+            app:layout_constraintTop_toBottomOf="@id/practice_title" />
+
+        <ImageButton
+            android:id="@+id/practice_hiking_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/practice_button_size"
+            android:background="@drawable/hiking"
+            app:layout_constraintBottom_toBottomOf="@id/practice_run_btn"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/practice_run_btn"
+            app:layout_constraintStart_toEndOf="@id/practice_bicycle_btn"
+            app:layout_constraintTop_toTopOf="@id/practice_run_btn" />
+
+        <ImageButton
+            android:id="@+id/practice_bicycle_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/practice_button_size"
+            android:background="@drawable/biking"
+            app:layout_constraintBottom_toBottomOf="@id/practice_run_btn"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/practice_hint_btn"
+            app:layout_constraintStart_toEndOf="@id/practice_hiking_btn"
+            app:layout_constraintTop_toTopOf="@id/practice_hiking_btn" />
+
+        <ImageButton
+            android:id="@+id/practice_hint_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/practice_button_size"
+            android:background="@drawable/text"
+            app:layout_constraintBottom_toBottomOf="@id/practice_run_btn"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/practice_binding_left"
+            app:layout_constraintStart_toEndOf="@id/practice_bicycle_btn"
+            app:layout_constraintTop_toTopOf="@id/practice_bicycle_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sleep_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_bottom_white_container"
+        android:background="@drawable/round_background"
+        android:padding="@dimen/white_container_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/practice_container">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sleep_indent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sleep_ok_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/OK"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sleep_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sleep_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sleep_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sleep_time"
+            android:textColor="@color/grey_text_color"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/sleep_title"
+            app:layout_constraintTop_toBottomOf="@id/sleep_indent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/pulse_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_bottom_white_container"
+        android:background="@drawable/round_background"
+        android:padding="@dimen/white_container_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleep_container">
+
+
+        <TextView
+            android:id="@+id/pulse_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pulse"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
