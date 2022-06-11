@@ -12,6 +12,9 @@
     <string name="pulse">Пульс</string>
     <string name="OK">OK</string>
     <string name="number_of_steps">34</string>
-    <string name="total_steps"> /9 000</string>
+    <string name="total_steps">9 000</string>
+    <string name="separator_steps">/</string>
+    <string name="steps_percent">0</string>
+    <string name="percent">%</string>
 
 </resources>

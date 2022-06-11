@@ -13,7 +13,7 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.3"
+        app:layout_constraintGuide_percent="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -92,6 +92,18 @@
             android:textColor="@color/black"
             android:textSize="@dimen/text_medium"
             app:layout_constraintBottom_toTopOf="@id/steps_time_total"
+            app:layout_constraintStart_toEndOf="@id/separator_steps"
+            app:layout_constraintTop_toBottomOf="@+id/steps_title"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <TextView
+            android:id="@+id/separator_steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/separator_steps"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintBottom_toTopOf="@id/steps_time_total"
             app:layout_constraintStart_toEndOf="@id/steps_amount"
             app:layout_constraintTop_toBottomOf="@+id/steps_title"
             app:layout_constraintVertical_bias="0.75" />
@@ -112,16 +124,23 @@
             android:id="@+id/steps_percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0%"
+            android:text="@string/steps_percent"
             app:layout_constraintBottom_toTopOf="@id/steps_progress_bar"
             app:layout_constraintStart_toStartOf="@id/steps_progress_bar" />
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/percent"
+            app:layout_constraintBottom_toTopOf="@id/steps_progress_bar"
+            app:layout_constraintStart_toEndOf="@id/steps_percent" />
 
         <ProgressBar
             android:id="@+id/steps_progress_bar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="@dimen/progress_bar_width"
             android:layout_height="@dimen/progress_bar_height"
-            android:progress="10"
             android:progressDrawable="@drawable/custome_progress_bar"
             app:layout_constraintBottom_toBottomOf="@id/steps_total"
             app:layout_constraintEnd_toEndOf="parent"
