@@ -9,9 +9,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    int stepsNumber = 1;
-    int stepsGoal = 1000;
-    float percent;
+    int stepsNumber = 0;
+    int stepsGoal = 9000;
+    int stepsIncrement = 111;
+    float percent = 0;
 
 
     TextView stepsAmountText;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         stepsAmountText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                stepsNumber = stepsNumber + 1;
+                stepsNumber = stepsNumber + stepsIncrement;
                 stepsAmountText.setText(String.valueOf(stepsNumber));
                 stepsPercent.setText(String.valueOf(percent));
                 percent = stepsNumber / (float) stepsGoal;
