@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.i("Test tag", "percent progress bar = " + percent);
 
-                if (stepsNumber>stepsGoal){
-                     Log.w("TAG", "maximum value exceeded = " + stepsGoal);
+                if (stepsNumber > stepsGoal) {
+                    Log.w("TAG", "maximum value exceeded = " + stepsGoal);
                 }
             }
         });
